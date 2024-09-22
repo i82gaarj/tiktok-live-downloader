@@ -38,8 +38,8 @@ Whenever the user starts streaming, the script will download the stream. Sometim
 
 You can start manually the script with ```python3 downloadTikTokLIVE.py username```.
 
-There will be one instance of the service for every channel. If there is an error, it will be logged on the system log.
+There will be one instance of the service for every channel/user. If there is an error, it will be logged in the system log.
 
-The filename will be something like ```2024_01_01_[Stream title]_roomID_userID_[username].flv```.
+The filename will be something like ```2024-01-01_13-16-28_[Stream title]_roomID_userID_[username].flv```.
 
 This was tested on a Raspberry Pi 4B using Raspbian OS.
