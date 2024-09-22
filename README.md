@@ -5,11 +5,14 @@ I did this because YT-DLP stops working when there is a change in TikTok API, so
 
 NOTICE: It only works with public accounts for now.
 
-## Project Status
-> ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-> ![GitHub last commit](https://img.shields.io/github/last-commit/i82gaarj/tiktok-live-downloader?style=for-the-badge)
-> ![GitHub repo size](https://img.shields.io/github/repo-size/i82gaarj/tiktok-live-downloader?style=for-the-badge)
-> ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/i82gaarj/tiktok-live-downloader?style=for-the-badge)
+<!--<div align="center">
+  
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![GitHub last commit](https://img.shields.io/github/last-commit/i82gaarj/tiktok-live-downloader?style=for-the-badge)
+![GitHub repo size](https://img.shields.io/github/repo-size/i82gaarj/tiktok-live-downloader?style=for-the-badge)
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/i82gaarj/tiktok-live-downloader?style=for-the-badge)
+
+</div>-->
 
 ## Usage
 Clone the repository:
@@ -57,7 +60,7 @@ Enable and start the service:
 
 ```systemctl enable your-tiktok-service@channelname && systemctl start your-tiktok-service@channelname``` (may require root privileges)
 
-Whenever the user starts streaming, the script will download the stream. Sometimes the stream stops and starts multiple times due to bad network connection of the streamer. This will split the stream into several files.
+Whenever the user starts streaming, the script will download the stream. Keep in mind that there is a 40-second delay between checks, so the download could start a bit later. Sometimes the stream stops and starts multiple times due to bad network connection of the streamer. This will split the stream into several files.
 
 There will be one instance of the service for every channel/user. If there is an error, it will be logged in the system log.
 
