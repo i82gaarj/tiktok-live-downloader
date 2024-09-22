@@ -32,7 +32,7 @@ WantedBy=multi-user.target
 
 Enable and start the service:
 
-```systemctl enable your-tiktok-service@channelname && systemctl start your-tiktok-service@channelname``` (may require root privileges).
+```systemctl enable your-tiktok-service@channelname && systemctl start your-tiktok-service@channelname``` (may require root privileges)
 
 Whenever the user starts streaming, the script will download the stream. Sometimes the stream stops and starts multiple times due to bad network connection of the streamer. This will split the stream into several files.
 
