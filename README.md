@@ -1,7 +1,7 @@
 # TikTok LIVE Downloader
 Simple Python script for downloading TikTok LIVE streams.
 
-I did this because YT-DLP stops working when there is a change in TikTok API, so here I can fix it quickly.
+I did this because YT-DLP stops working when there is a change in TikTok API, so here I can fix it quickly. In this script, I only use YT-DLP to handle the filename and the download of the FLV stream.
 
 ## Tutorial
 Required: [yt-dlp](https://github.com/yt-dlp/yt-dlp) installed.
