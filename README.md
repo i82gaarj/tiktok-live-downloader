@@ -68,7 +68,7 @@ This was tested on a Raspberry Pi 4B using Raspbian OS.
 ## To do
 - [ ] Refactor the code.
 - [ ] Allow authentication so the user can download streams from private accounts.
-- [ ] Allow using proxies to bypass login restrictions.
+- [ ] Allow using proxies to bypass login restrictions in some countries.
 
 ## Legal
 This code is in no way affiliated with, authorized, maintained, sponsored or endorsed by TikTok or any of its affiliates or subsidiaries. Use at your own risk.
