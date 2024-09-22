@@ -1,17 +1,19 @@
 # TikTok LIVE Downloader
 Simple Python script for downloading TikTok LIVE streams.
 
-I did this because YT-DLP stops working when there is a change in TikTok API, so I can fix it quickly.
+I did this because YT-DLP stops working when there is a change in TikTok API, so here I can fix it quickly.
 
 ## Tutorial
 Required: [yt-dlp](https://github.com/yt-dlp/yt-dlp) installed
 
-Recommended: create a Python virtual env and install yt-dlp in the same venv.
+Recommended:
+- Create a Python virtual env and install yt-dlp with pip in the same venv.
+- Use a hosted server, home server or any Linux device which is always running.
 
-### Formats config file
-There is an example config file to choose the download quality for every user/channel. If there is no config, it will download in "SD1" (the lowest quality offered by TikTok), but you can change this in the script.
+### Quality config file
+There is an example config file to choose the download quality for every user/channel. If there is no config, it will download the stream in "SD1", the lowest quality offered by TikTok, but you can change this in the script.
 
-### Service
+### Linux SystemD service
 In Linux, create a service template in ```/lib/systemd/system/your-tiktok-service@.service```:
 
 ```
@@ -30,7 +32,10 @@ WantedBy=multi-user.target
 
 Enable and start the service:
 
-```systemctl enable your-tiktok-service@channelname && systemctl start your-tiktok-service@channelname```
+```systemctl enable your-tiktok-service@channelname && systemctl start your-tiktok-service@channelname``` (may require root privileges)
 
-There will be one instance of the service for every channel.
-If there is an error, it will be logged on the system log.
+Whenever the user starts streaming, the script will download the stream. Sometimes the stream stops multiple times due to bad network connection of the streamer. This will split the stream into several files.
+
+There will be one instance of the service for every channel. If there is an error, it will be logged on the system log.
+
+This was tested on a Raspberry Pi 4B with Raspbian OS.
