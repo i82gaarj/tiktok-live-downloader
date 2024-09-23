@@ -78,6 +78,7 @@ This was tested on a Raspberry Pi 4B using Raspbian OS.
 
 ## To do
 - [ ] Refactor the code.
+- [ ] Make some options configurable in another config file.
 - [ ] Allow authentication so the user can download streams from private accounts.
 - [ ] Allow using proxies to bypass login restrictions in some countries.
 
