@@ -60,7 +60,7 @@ Enable and start the service:
 
 ```systemctl enable your-tiktok-service@channelname && systemctl start your-tiktok-service@channelname``` (may require root privileges)
 
-Whenever the user starts streaming, the script will download the stream. Keep in mind that there is a 40-second delay between checks, so the download could start a bit later. Sometimes the stream stops and starts multiple times due to bad network connection of the streamer. This will split the stream into several files.
+Whenever the user starts streaming, the script will download the stream. Keep in mind that there is a 40-second delay between checks, so the download could start a bit later. Sometimes the stream stops and starts multiple times due to bad network connection of the streamer. This will cause the stream to split into several files. Some other times the stream stops in a wrong way causing YT-DLP to not rename the ".part" file. You can remove the .part extension but the video won't be seekable. You will need to use ffmpeg and copy the video to a new file without re-encoding to fix this.
 
 There will be one instance of the service for every channel/user. If there is an error, it will be logged in the system log.
 
