@@ -46,7 +46,7 @@ In Linux, create a service template in ```/lib/systemd/system/your-tiktok-servic
 [Unit]
 Description=TikTok LIVE Downloader for user %I
 [Service]
-User=your-user ### SET THIS TO YOUR USERNAME
+User=your-user ### SET THIS TO YOUR LINUX USER
 Type=simple
 
 ExecStart=-/path/to/venv/python /path/to/downloadTikTokLIVE.py %i ### SET THIS TO YOUR PATHS
