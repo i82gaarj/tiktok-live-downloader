@@ -60,13 +60,21 @@ Enable and start the service:
 
 ```systemctl enable your-tiktok-service@channelname && systemctl start your-tiktok-service@channelname``` (may require root privileges)
 
-Whenever the user starts streaming, the script will download the stream. Keep in mind that there is a 40-second delay between checks, so the download could start a bit later. Sometimes the stream stops and starts multiple times due to bad network connection of the streamer. This will cause the stream to split into several files. Some other times the stream stops in a wrong way causing YT-DLP to not rename the ".part" file. You can remove the .part extension but the video won't be seekable. You will need to use ffmpeg and copy the video to a new file without re-encoding to fix this.
+Whenever the user starts streaming, the script will download the stream. Keep in mind that there is a 40-second delay between checks, so the download could start a bit later.
 
 There will be one instance of the service for every channel/user. If there is an error, it will be logged in the system log.
 
 The filename will be something like ```2024-01-01_13-16-28_[Stream title]_roomID_userID_[username].flv```.
 
 This was tested on a Raspberry Pi 4B using Raspbian OS.
+
+### Issues
+
+- Sometimes the stream stops and starts multiple times due to bad network connection of the streamer. This will cause the stream to split into several files.
+
+- Some other times the stream stops in a wrong way causing YT-DLP to not rename the ".part" file. You can remove the .part extension but the video probably won't be seekable. You will need to use ffmpeg and copy the video to a new file without re-encoding to fix this.
+
+- I've sometimes had problems with already downloaded FLV TikTok streams, specially when more users join the stream. In these cases the video duration is totally incorrect (usually hundreds of hours). This is NOT an issue with this script.
 
 ## To do
 - [ ] Refactor the code.
