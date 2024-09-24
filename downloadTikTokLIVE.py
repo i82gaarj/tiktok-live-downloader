@@ -78,7 +78,7 @@ while True:
                     except Exception as e:
                         exception = e
                         liveStatus = None
-                    # Check Live status
+                    # Step 3: Check Live status
                     if liveStatus != None:
                         if liveStatus > 0 and liveStatus < 4: # 2 means live, 4 means offline, rarely I got 1 and 3 and probably mean live paused but I'm not sure
                             try:
@@ -92,6 +92,7 @@ while True:
                                 quality = 'sd1'
                                 log = journal.stream('TikTok Live - ' + channelName)
                                 log.write('Warning: Couldn\'t get quality from config file. Using default \'sd1\'. Room ID: ' + str(roomID) + ', SC1: ' + str(statusCodeR1) + ', SC2: ' + str(statusCodeR2) + '. ' + type(e).__name__ + ': ' + str(e) + '\n')
+                            # Step 4: Get Room info and stream URL
                             try:
                                 r3 = requests.get(urlWebcast + str(roomID), timeout=TIMEOUT_SECS, headers=headers)
                                 statusCodeR3 = r3.status_code
