@@ -38,8 +38,8 @@ while True:
     try:
         headers = {'User-Agent': random.choice(user_agents)} # Optional
 
-        cj = cookielib.MozillaCookieJar('/path/to/cookies.txt')
-        cj.load() # Load cookies if needed
+        #cj = cookielib.MozillaCookieJar('/path/to/cookies.txt')
+        #cj.load() # Load cookies if needed
         try:
             r1 = requests.get(urlWebpage, timeout=TIMEOUT_SECS, headers=headers)
             statusCodeR1 = r1.status_code
