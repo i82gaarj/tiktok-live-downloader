@@ -104,8 +104,12 @@ while True:
                                     contentsApiWebcast = r3.text
                                     jsonApiWebcast = json.loads(contentsApiWebcast)
                                     if "data" in jsonApiWebcast:
-                                        if quality == "origin":
-                                            livestreamUrl = jsonApiWebcast["data"]["stream_url"]["rtmp_pull_url"] # URL for ORIGIN quality is in another JSON key
+                                        if quality == "origin": # URL for ORIGIN quality is in another JSON key
+                                            jsonStreamDataStr = jsonApiWebcast["data"]["stream_url"]["live_core_sdk_data"]["pull_data"]["stream_data"]
+                                            jsonStreamData = json.loads(jsonStreamDataStr)
+                                            if "data" in jsonStreamData:
+                                                livestreamUrl = jsonStreamData["data"]["origin"]["main"]["flv"]
+                                                print(livestreamUrl)
                                         else:
                                             qualityUppercase = quality.upper()
                                             livestreamUrl = jsonApiWebcast["data"]["stream_url"]["flv_pull_url"][qualityUppercase]
