@@ -72,7 +72,7 @@ This was tested on a Raspberry Pi 4B using Raspbian OS.
 
 - Sometimes the stream stops and starts multiple times due to bad network connection of the streamer. This will cause the stream to split into several files.
 
-- Sometimes the stream stops in a wrong way causing YT-DLP to not rename the ".part" file. You can remove the .part extension but the video probably won't be seekable. You will need to use ffmpeg and copy the video to a new file without re-encoding to fix this.
+- Sometimes the stream stops in a wrong way causing YT-DLP to not rename the ".part" file. You can remove the .part extension but the video probably won't be seekable. You will need ffmpeg to copy the video to a new file without re-encoding to fix this.
 
 - I've sometimes had problems with already downloaded FLV TikTok streams, specially when more users joined the stream. In these cases the video duration is totally incorrect (usually hundreds of hours). This is NOT an issue with this script.
 
