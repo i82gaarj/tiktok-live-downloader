@@ -109,7 +109,8 @@ while True:
                                             jsonStreamData = json.loads(jsonStreamDataStr)
                                             if "data" in jsonStreamData:
                                                 livestreamUrl = jsonStreamData["data"]["origin"]["main"]["flv"]
-                                                print(livestreamUrl)
+                                            else:
+                                                livestreamUrl = None
                                         else:
                                             qualityUppercase = quality.upper()
                                             livestreamUrl = jsonApiWebcast["data"]["stream_url"]["flv_pull_url"][qualityUppercase]
