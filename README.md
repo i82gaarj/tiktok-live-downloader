@@ -81,7 +81,7 @@ This was tested on a Raspberry Pi 4B using Raspbian OS.
 - [ ] Improve the logging system.
 - [ ] Make some options configurable in another config file.
 - [ ] Allow authentication so the user can download streams from private accounts.
-- [ ] Allow using proxies to bypass login restrictions in some countries.
+- [ ] Allow using proxies to bypass login restrictions if needed.
 
 ## Legal
 This code is in no way affiliated with, authorized, maintained, sponsored or endorsed by TikTok or any of its affiliates or subsidiaries. Use at your own risk.
